@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.terra.example1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EcomProductServiceApplicationTests {
+class ConfigServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

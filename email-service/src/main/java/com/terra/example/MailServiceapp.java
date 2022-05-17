@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.terra.example;
 
 import java.io.File;
 import java.util.Properties;
@@ -17,12 +17,12 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmailServiceImpl implements EmailService {
+public class MailServiceapp implements MailService {
 	@Autowired
 	private JavaMailSender javaMailSender;
 
 	@Override
-	public String sendSimpleMail(EmailDetails details) {
+	public String sendSimpleMail(MailDetails details) {
 
 		try {
 			SimpleMailMessage mailMessage = new SimpleMailMessage();
@@ -40,7 +40,7 @@ public class EmailServiceImpl implements EmailService {
 	}
 
 	@Override
-	public String sendMailWithAttachment(EmailDetails details) {
+	public String sendMailWithAttachment(MailDetails details) {
 		MimeMessage mimeMessage = javaMailSender.createMimeMessage();
 		MimeMessageHelper mimeMessageHelper;
 

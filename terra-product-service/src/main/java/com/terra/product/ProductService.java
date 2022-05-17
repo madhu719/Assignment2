@@ -46,7 +46,7 @@ public class ProductService {
 		return repository.findProductByProductName(productName);
 	}
 
-	private ResponseEntity<String> invokeEmailService(@RequestBody EmailDetails emailDeatails) {
+	private ResponseEntity<String> invokeEmailService(@RequestBody mailDetails emailDeatails) {
 		if (restTemplate == null) {
 			restTemplate = new RestTemplate();
 		}
@@ -58,7 +58,7 @@ public class ProductService {
 
 	private void sendProductDetails(Product product) {
 		try {
-			EmailDetails emailDetails = new EmailDetails();
+			mailDetails emailDetails = new mailDetails();
 			ObjectMapper mapper = new ObjectMapper();		
 			emailDetails.setMsgBody(mapper.writeValueAsString(product));		
 			emailDetails.setRecipient("sudhanreddy07@gmail.com.com");
@@ -71,7 +71,7 @@ public class ProductService {
 
 	private void createAndSendListOfProductDetails(List<Product> listOfProduct)  {
 		try {
-		EmailDetails emailDetails = new EmailDetails();
+		mailDetails emailDetails = new mailDetails();
 		ObjectMapper mapper = new ObjectMapper();
 		
 			emailDetails.setMsgBody(mapper.writeValueAsString(listOfProduct));		

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.terra.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class EmailController {
+public class MailController {
 	@Autowired
-	private EmailService emailService;
+	private MailService emailService;
 
 	@PostMapping("/sendMail")
-	public String sendMail(@RequestBody EmailDetails details) {
+	public String sendMail(@RequestBody MailDetails details) {
 		String status = emailService.sendSimpleMail(details);
 		return status;
 	}
 
 	@PostMapping("/sendMailWithAttachment")
-	public String sendMailWithAttachment(@RequestBody EmailDetails details) {
+	public String sendMailWithAttachment(@RequestBody MailDetails details) {
 		String status = emailService.sendMailWithAttachment(details);
 		return status;
 	}

@@ -1,6 +1,6 @@
-package com.terra.product;
+package com.terra.example;
 
-public class EmailDetails {
+public class MailDetails {
 	private String recipient;
 	private String msgBody;
 	private String subject;
